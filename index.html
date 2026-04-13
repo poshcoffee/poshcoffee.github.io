@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<link rel="icon" type="image/x-icon" href="poshcoffee_favicon.png">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posh Coffee — Кофейня на Волковской</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="header-container">
+            <div class="logo">Posh Coffee</div>
+            <a href="https://yandex.ru/maps/org/posh_coffee/241739492841?si=a10nwjr7ckjmcfz25fadwhdk5g" class="map-link-top">Найти нас на Яндекс картах</a>
+        </div>
+    </header>
+
+    <section class="main-banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h1>Posh Coffee</h1>
+            <p class="address">СПБ, Волковский проспект, 6, (м. Волковская)</p>
+            <p class="description">Варим кофе для своих, печем булочки и создаем уют каждый день.</p>
+            <a href="https://yandex.ru/maps/org/posh_coffee/241739492841?si=a10nwjr7ckjmcfz25fadwhdk5g" class="main-button">Найти на карте</a>
+        </div>
+    </section>
+
+    <section class="container reveal-wrap">
+        <h2 class="section-title">Отзывы</h2>
+        <div class="reviews-grid">
+            <div class="review-card reveal-item">
+                <h3>Альбина Казакова</h3>
+                <p>Очень классная кофейня из-за своего вкусного кофе и приятного приветливого бариста) Пью кофе только на растительном молоке...</p>
+            </div>
+            <div class="review-card reveal-item">
+                <h3>Светлана Забелина</h3>
+                <p>Самый вкусный капучино за последнее время ❤️✨ с мятным сиропом попробуйте - не пожалеете!</p>
+            </div>
+            <div class="review-card reveal-item">
+                <h3>Дарья Старкова</h3>
+                <p>Замечательная кофейня, самая вкусная матча, очень нравится. Бариста приятные и приветливые люди!</p>
+            </div>
+            <div class="review-card reveal-item">
+                <h3>Sofya Volkova</h3>
+                <p>Самая лучшая кофейня в округе, приятная атмосфера, бариста Ангелина варит самый вкусный кофе.</p>
+            </div>
+            <div class="review-card reveal-item">
+                <h3>Охаё</h3>
+                <p>Безумно вкусный кофе и приятный персонал!) Давно не получала такого удовольствия от напитка. 🥰❤️</p>
+            </div>
+            <div class="review-card reveal-item">
+                <h3>Наталья Е.</h3>
+                <p>Часто захожу сюда, всегда вкусно, бариста вежливые, доброжелательные, всегда учитывают пожелания 🌞</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container reveal-wrap">
+        <h2 class="section-title">Фотографии</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item reveal-item"><img src="poshcoffee_view(7).png" alt="1"></div>
+            <div class="gallery-item reveal-item"><img src="poshcoffee_view(8).png" alt="2"></div>
+            <div class="gallery-item reveal-item"><img src="poshcoffee_view(3).png" alt="3"></div>
+            <div class="gallery-item reveal-item"><img src="poshcoffee_view(5).png" alt="4"></div>
+            <div class="gallery-item reveal-item"><img src="poshcoffee_view(4).png" alt="5"></div>
+            <div class="gallery-item reveal-item"><img src="poshcoffee_view(6).png" alt="6"></div>
+        </div>
+    </section>
+	
+	<a href="https://yandex.ru/maps/org/posh_coffee/241739492841?si=a10nwjr7ckjmcfz25fadwhdk5g" class="main-button" >Найти на Яндекс Картах</a>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Posh Coffee. Ждем вас в гости.</p>
+        </div>
+    </footer>
+	
+	
+
+    <script>
+        // Скрипт для поочередного появления
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Находим все анимируемые элементы внутри текущей секции
+                    const items = entry.target.querySelectorAll('.reveal-item');
+                    items.forEach((item, index) => {
+                        // Устанавливаем задержку в зависимости от порядкового номера (0.15 сек на каждый шаг)
+                        item.style.transitionDelay = `${index * 0.15}s`;
+                        item.classList.add('active');
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-wrap').forEach(wrap => observer.observe(wrap));
+    </script>
+
+</body>
+</html>
